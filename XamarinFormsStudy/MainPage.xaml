@@ -4,7 +4,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:XamarinFormsStudy"
     mc:Ignorable="d" x:Class="XamarinFormsStudy.MainPage">
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel />
+    </ContentPage.BindingContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -17,15 +21,17 @@
                 <ColumnDefinition Width="100"/>
             </Grid.ColumnDefinitions>
             <Label
-                Text="PJImageDownloader"
+                Text="Title"
                 TextColor="Blue"
                 FontSize="Large"
                 VerticalOptions="CenterAndExpand"/>
             <Entry
+                Text="{Binding InputMessage}"
                 Placeholder=""
                 Grid.Column="1"/>
             <Button
-                Text="Hoge"
+                Text="Update"
+                Command="{Binding UpdateBodyMessage}"
                 TextColor="Black"
                 BackgroundColor="LightGray"
                 BorderColor="Gray"
@@ -35,7 +41,7 @@
                 Grid.Column="2" />
         </Grid>
         <Label
-            Text="Welcome to Xamarin.Forms!"
+            Text="{Binding BodyMessage}"
             HorizontalOptions="Center"
             VerticalOptions="CenterAndExpand"
             Grid.Row="1"/>
