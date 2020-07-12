@@ -2,6 +2,7 @@
 using Foundation;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.MacOS;
+using XamarinFormsStudy;
 
 namespace XamarinFormsStudy.Mac
 {
@@ -31,7 +32,7 @@ namespace XamarinFormsStudy.Mac
         public override void DidFinishLaunching(NSNotification notification)
         {
             Forms.Init();
-            LoadApplication(new App());
+            LoadApplication(new XamarinFormsStudy.App());
             base.DidFinishLaunching(notification);
         }
 
