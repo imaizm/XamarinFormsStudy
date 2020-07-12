@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" x:Class="XamarinFormsStudy.MainPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid BackgroundColor="LightBlue" Padding="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <Label
+                Text="PJImageDownloader"
+                TextColor="Blue"
+                FontSize="Large"
+                VerticalOptions="CenterAndExpand"/>
+            <Entry
+                Placeholder=""
+                Grid.Column="1"/>
+            <Button
+                Text="Hoge"
+                TextColor="Black"
+                BackgroundColor="LightGray"
+                BorderColor="Gray"
+                BorderWidth="1"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Grid.Column="2" />
+        </Grid>
+        <Label
+            Text="Welcome to Xamarin.Forms!"
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand"
+            Grid.Row="1"/>
+    </Grid>
+</ContentPage>
