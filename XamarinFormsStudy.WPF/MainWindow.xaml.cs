@@ -12,17 +12,23 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.WPF;
+using XamarinFormsStudy;
 
 namespace XamarinFormsStudy.WPF
 {
     /// <summary>
     /// MainWindow.xaml の相互作用ロジック
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : FormsApplicationPage
     {
         public MainWindow()
         {
             InitializeComponent();
+
+            Forms.Init();
+            LoadApplication(new XamarinFormsStudy.App());
         }
     }
 }

@@ -117,6 +117,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XamarinFormsStudy\XamarinFormsStudy.csproj">
+      <Project>{d44cd0bf-1606-42f3-9fc5-4368374d4645}</Project>
+      <Name>XamarinFormsStudy</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
