@@ -11,10 +11,14 @@
     </ContentPage.BindingContext>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid BackgroundColor="LightBlue" Padding="10">
+        <Grid
+            BackgroundColor="LightBlue"
+            Padding="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>
@@ -31,7 +35,7 @@
                 Grid.Column="1"/>
             <Button
                 Text="Update"
-                Command="{Binding UpdateBodyMessage}"
+                Command="{Binding UpdateBodyMessageCommand}"
                 TextColor="Black"
                 BackgroundColor="LightGray"
                 BorderColor="Gray"
@@ -45,5 +49,26 @@
             HorizontalOptions="Center"
             VerticalOptions="CenterAndExpand"
             Grid.Row="1"/>
+        <Grid
+            Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button
+                Text="File"
+                Command="{Binding OpenFilePickerCommand}"
+                TextColor="Black"
+                BackgroundColor="LightGray"
+                BorderColor="Gray"
+                BorderWidth="1"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Grid.Column="0" />
+        </Grid>
+        <Label
+            Text="{Binding BodyMessage}"
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand"
+            Grid.Row="3"/>
     </Grid>
 </ContentPage>

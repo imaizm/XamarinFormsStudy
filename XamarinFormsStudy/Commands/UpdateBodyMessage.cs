@@ -17,7 +17,7 @@ namespace XamarinFormsStudy.Commands
 
         public bool CanExecute(object parameter)
         {
-            return true;
+            return !string.IsNullOrEmpty(this.mainPageViewModel.InputMessage);
         }
 
         public void Execute(object parameter)

@@ -5,20 +5,24 @@ namespace XamarinFormsStudy.Commands
 {
     public class OpenFilePickerCommand : ICommand
     {
-        public OpenFilePickerCommand()
+        private MainPageViewModel mainPageViewModel;
+
+        public OpenFilePickerCommand(MainPageViewModel mainPageViewModel)
         {
+            this.mainPageViewModel = mainPageViewModel;
         }
 
         public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
-        public void Execute(object parameter)
+        public async void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            var file = await Plugin.FilePicker.CrossFilePicker.Current.PickFile();
+            this.mainPageViewModel.BodyMessage = file.ToString();
         }
     }
 }

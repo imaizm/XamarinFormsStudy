@@ -18,7 +18,7 @@ namespace XamarinFormsStudy
             }
         }
 
-        private string inputMessage = "hoge";
+        private string inputMessage;
         public string InputMessage
         {
             get { return inputMessage; }
@@ -29,11 +29,13 @@ namespace XamarinFormsStudy
             }
         }
 
-        public ICommand UpdateBodyMessage { get; }
+        public ICommand UpdateBodyMessageCommand { get; }
+        public ICommand OpenFilePickerCommand { get; }
 
         public MainPageViewModel()
         {
-            this.UpdateBodyMessage = new UpdateBodyMessage(this);
+            this.UpdateBodyMessageCommand = new UpdateBodyMessage(this);
+            this.OpenFilePickerCommand = new OpenFilePickerCommand(this);
         }
     }
 }
