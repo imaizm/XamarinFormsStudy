@@ -65,10 +65,29 @@
                 VerticalOptions="FillAndExpand"
                 Grid.Column="0" />
         </Grid>
-        <Label
-            Text="{Binding BodyMessage}"
-            HorizontalOptions="Center"
-            VerticalOptions="CenterAndExpand"
-            Grid.Row="3"/>
+        <ListView
+            ItemsSource="{Binding FileInfoList}"
+            Grid.Row="3">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid BackgroundColor="{Binding BackGroundColor}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <CheckBox
+                                IsChecked="{Binding IsSelected}"
+                                IsVisible="{Binding IsSelectable}"
+                                Grid.Column="0"/>
+                            <Label
+                                Text="{Binding Title}"
+                                VerticalOptions="Center"
+                                Grid.Column="1"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </ContentPage>
