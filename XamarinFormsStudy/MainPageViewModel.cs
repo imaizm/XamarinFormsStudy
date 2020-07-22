@@ -58,7 +58,8 @@ namespace XamarinFormsStudy
             parentPath.IsSelectable = false;
             parentPath.Title = "..";
             parentPath.Path = Directory.GetParent(path).ToString();
-            parentPath.BackGroundColor = Color.LightYellow;
+            parentPath.GridBackgroundColor = Color.LightYellow;
+            parentPath.CheckBoxBackgroundColor = Color.Gray;
             this.FileInfoList.Add(parentPath);
 
             foreach (var file in files)
@@ -70,7 +71,8 @@ namespace XamarinFormsStudy
                 fileInfo.IsSelectable = true;
                 fileInfo.Title = file.Replace(path + Path.DirectorySeparatorChar, "");
                 fileInfo.Path = file;
-                fileInfo.BackGroundColor = (fileInfo.IsFile) ? Color.White : Color.LightYellow;
+                fileInfo.GridBackgroundColor = (fileInfo.IsFile) ? Color.White : Color.LightYellow;
+                fileInfo.CheckBoxBackgroundColor = Color.White;
                 this.FileInfoList.Add(fileInfo);
             }
 
@@ -84,6 +86,7 @@ namespace XamarinFormsStudy
         public bool IsSelectable { get; set; }
         public string Title { get; set; }
         public string Path { get; set; }
-        public Color BackGroundColor { get; set; }
+        public Color GridBackgroundColor { get; set; }
+        public Color CheckBoxBackgroundColor { get; set; }
     }
 }

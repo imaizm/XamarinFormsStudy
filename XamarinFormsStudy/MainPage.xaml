@@ -71,14 +71,17 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid BackgroundColor="{Binding BackGroundColor}">
+                        <Grid
+                            BackgroundColor="{Binding GridBackgroundColor}"
+                            HorizontalOptions="StartAndExpand">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="30"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <CheckBox
                                 IsChecked="{Binding IsSelected}"
-                                IsVisible="{Binding IsSelectable}"
+                                IsEnabled="{Binding IsSelectable}"
+                                BackgroundColor="{Binding CheckBoxBackgroundColor}"
                                 Grid.Column="0"/>
                             <Label
                                 Text="{Binding Title}"
